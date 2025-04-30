@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <span class="w-full">${taskText}</span>
     <div class="flex justify-center items-center">
       <button id="edit-btn" class="border size-6 text-sm p-4 flex justify-center items-center rounded-full bg-yellow-300 ml-1 cursor-pointer hover:bg-yellow-400"><i class="fa-solid fa-pen"></i></button>
-      <button id="delete-btn" class="border size-6 text-sm p-4 flex justify-center items-center rounded-full bg-red-300 ml-1 cursor-pointer hover:bg-red-400"><i class="fa-solid fa-trash"></i></button>
+      <button id="delete-btn" class="border size-6 text-sm p-4 flex justify-center items-center rounded-full bg-red-400 ml-1 cursor-pointer hover:bg-red-500"><i class="fa-solid fa-trash"></i></button>
     </div>
     `
 
@@ -61,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ('#checkbox')
     const editBtn = li.querySelector
     ('#edit-btn');
+    const deleteBtn = li.querySelector
+    ('#delete-btn');
+    const taskTextEl = li.querySelector
+    ('span');
 
     if (completed) {
       li.classList.add('completed');
@@ -70,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkbox.addEventListener('change', () => {
       const isChecked = checkbox.checked;
-      li.classList.toggle('completed', isChecked);
+      taskTextEl.classList.toggle('completed', isChecked);
+      taskTextEl.classList.toggle('completed', isChecked);
 
       editBtn.disabled = isChecked;
 
